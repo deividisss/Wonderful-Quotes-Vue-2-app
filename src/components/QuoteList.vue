@@ -3,10 +3,10 @@
     <!-- <div class="row bg-primary text-light"> -->
     <app-quote
       v-for="(quote, index) in quotes"
-      :key="index"
+      :key="index + quote.author"
       :quote="quote"
       :index="index"
-      @click.native="$delete(quotes, index)"
+      @delete-quote="$delete(quotes, $event)"
     ></app-quote>
   </div>
 </template>
@@ -19,11 +19,7 @@ export default {
     appQuote,
   },
   props: ["quotes"],
-  methods: {
-    // deleteEvent: function (index) {
-    //   this.quotes.splice(index, 1);
-    // },
-  },
+  methods: {},
 
   created() {},
 };
