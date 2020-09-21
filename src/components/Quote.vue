@@ -1,12 +1,20 @@
 <template>
   <div class="col-sm-4 mt-4">
-    <div class="border border-secondary">
+    <div class="border p-4">
       <h4>Quote</h4>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus quo dolorum commodi adipisci? Vel at, ratione repellat a esse repellendus explicabo doloremque eveniet, tempore blanditiis magni aliquam laborum impedit deleniti.</p>
+      <p>{{ quote.quote }}</p>
+      <p>
+        <i>
+          <b>Author:</b>
+          {{quote.author}}
+        </i>
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["quote"],
+};
 </script>

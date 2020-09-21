@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <!-- <div class="row bg-primary text-light"> -->
-    <app-quote v-for="index in 10" :key="index"></app-quote>
+    <app-quote v-for="(quote, index) in quotes" :key="index + author" :quote="quote"></app-quote>
   </div>
 </template>
 
@@ -12,5 +12,8 @@ export default {
   components: {
     appQuote,
   },
+  props: ["quotes"],
+
+  created() {},
 };
 </script>
