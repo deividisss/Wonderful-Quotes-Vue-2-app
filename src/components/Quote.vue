@@ -3,13 +3,15 @@
     <div class="border p-4" @click="$emit('delete-quote', index)">
       <!-- <div class="border p-4" @click="deleteQuote"> -->
       <h4>Quote</h4>
-      <p>{{ quote.quote }}</p>
-      <p>
-        <i>
-          <b>Author:</b>
-          {{quote.author}}
-        </i>
-      </p>
+
+      <blockquote class="blockquote">
+        <p class="mb-0">{{ quote.quote }}</p>
+        <footer class="blockquote-footer">
+          Written by
+          <cite :title="quote.author">{{quote.author}}</cite>
+        </footer>
+      </blockquote>
+      <p></p>
     </div>
   </div>
 </template>
