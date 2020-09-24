@@ -5,28 +5,38 @@
     </app-header>
 
     <div class="container">
+      <app-new-quote></app-new-quote>
       <app-info-bar>
         <slot>
           <b>Info:</b> Cick on Quote to delete it
         </slot>
       </app-info-bar>
+
       <app-quote-list :quotes="quotes"></app-quote-list>
     </div>
+    <br />
   </div>
 </template>
 
 <script>
-// Alert box kuris saka istrink quotes, jei nori pridėt
+// App.vue ToDo List
+// Real time appearing Quote
+// Su Enter submit form
+// Alert box kuris saka istrink quotes, jei nori pridėt paildomai virsijus limita
 // Quote wall Limit 10
 // Tweet quote
 // Fetch Quote
 // Quote Design pagal temą
 // Local storage
+// Add Border animation
+//Active component switch
+// Progress Bars spalvas pagal Quote pasirinkta dizaina
 
 import appHeader from "./components/layout/Header.vue";
 import appQuote from "./components/Quote.vue";
 import appQuoteList from "./components/QuoteList.vue";
 import appInfoBar from "./components/InfoBar.vue";
+import appNewQuote from "./components/NewQuote.vue";
 
 export default {
   components: {
@@ -34,6 +44,7 @@ export default {
     appHeader,
     appQuoteList,
     appInfoBar,
+    appNewQuote,
   },
   data() {
     return {
