@@ -4,9 +4,15 @@
       <slot>{{ name }}</slot>
     </app-header>
     <div class="container">
+      <div class="row">
+        <div class="col mt-4 text-center">
+          <div class="alert alert-primary" role="alert">
+            <b>Info:</b> Cick on Quote to delete it
+          </div>
+        </div>
+      </div>
       <app-quote-list :quotes="quotes"></app-quote-list>
     </div>
-    <br />
   </div>
 </template>
 

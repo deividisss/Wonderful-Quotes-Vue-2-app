@@ -11,7 +11,6 @@
           <cite :title="quote.author">{{quote.author}}</cite>
         </footer>
       </blockquote>
-      <p></p>
     </div>
   </div>
 </template>
