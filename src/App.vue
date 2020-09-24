@@ -3,14 +3,13 @@
     <app-header>
       <slot>{{ name }}</slot>
     </app-header>
+
     <div class="container">
-      <div class="row">
-        <div class="col mt-4 text-center">
-          <div class="alert alert-primary" role="alert">
-            <b>Info:</b> Cick on Quote to delete it
-          </div>
-        </div>
-      </div>
+      <app-info-bar>
+        <slot>
+          <b>Info:</b> Cick on Quote to delete it
+        </slot>
+      </app-info-bar>
       <app-quote-list :quotes="quotes"></app-quote-list>
     </div>
   </div>
@@ -27,12 +26,14 @@
 import appHeader from "./components/layout/Header.vue";
 import appQuote from "./components/Quote.vue";
 import appQuoteList from "./components/QuoteList.vue";
+import appInfoBar from "./components/InfoBar.vue";
 
 export default {
   components: {
     appQuote,
     appHeader,
     appQuoteList,
+    appInfoBar,
   },
   data() {
     return {
