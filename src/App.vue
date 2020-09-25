@@ -3,9 +3,9 @@
     <app-header>
       <slot>{{ name }}</slot>
     </app-header>
+    <app-new-quote></app-new-quote>
 
     <div class="container">
-      <app-new-quote></app-new-quote>
       <app-info-bar>
         <slot>
           <b>Info:</b> Cick on Quote to delete it
@@ -20,8 +20,11 @@
 
 <script>
 // App.vue ToDo List
-// Real time appearing Quote
-// Su Enter submit form
+// Auto kalba
+// Margin auto Quote when used in NewQuote component +
+// gggggggggggggggggggggggg bug (jei kartoji simboli ir nededi tarpu neveik break point )
+// Real time appearing Quote +
+// Su Enter submit form +
 // Alert box kuris saka istrink quotes, jei nori pridėt paildomai virsijus limita
 // Quote wall Limit 10
 // Tweet quote
@@ -29,7 +32,7 @@
 // Quote Design pagal temą
 // Local storage
 // Add Border animation
-//Active component switch
+// Active component switch
 // Progress Bars spalvas pagal Quote pasirinkta dizaina
 
 import appHeader from "./components/layout/Header.vue";

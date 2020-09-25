@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm-4 mt-4">
+  <div class="col-lg-4 mt-4">
     <div class="border rounded p-4 quote" @click="$emit('delete-quote', index)">
       <!-- <div class="border p-4" @click="deleteQuote"> -->
       <h4>Quote</h4>
@@ -24,8 +24,6 @@ export default {
 </script>
 
 <style scoped>
-.quote {
-}
 .quote:hover {
   cursor: pointer;
   background-color: rgb(255 87 104 / 30%);
