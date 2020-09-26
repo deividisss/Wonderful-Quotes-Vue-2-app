@@ -1,6 +1,10 @@
 <template>
   <div class="col-lg-4 mt-4">
-    <div class="border rounded p-4 quote" @click="$emit('delete-quote', index)">
+    <div
+      class="border rounded p-4"
+      @click="$emit('delete-quote', index)"
+      :class="{ quote: activeHover }"
+    >
       <!-- <div class="border p-4" @click="deleteQuote"> -->
       <h4>Quote</h4>
 
@@ -17,9 +21,19 @@
 
 <script>
 export default {
-  props: ["quote", "index"],
+  props: ["quote", "index", "hover"],
   methods: {},
   created() {},
+  data() {
+    return {};
+  },
+  computed: {
+    activeHover() {
+      if (this.hover === undefined) {
+        return (this.hover = true);
+      }
+    },
+  },
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <app-quote style="margin: 0 auto" :quote="quote"></app-quote>
+      <app-quote style="margin: 0 auto" :quote="quote" :hover="false"></app-quote>
     </div>
 
     <form @submit.prevent="onSubmit" class="mt-4">
@@ -37,7 +37,7 @@ export default {
     };
   },
   methods: {
-    onSubmit(e) {
+    onSubmit() {
       alert(this.quote.quote + this.quote.author);
     },
   },
