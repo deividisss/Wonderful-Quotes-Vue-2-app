@@ -3,13 +3,11 @@
     <app-header>
       <slot>{{ name }}</slot>
     </app-header>
-    <app-new-quote></app-new-quote>
+    <app-new-quote :quotes="quotes"></app-new-quote>
 
     <div class="container">
       <app-info-bar>
-        <slot>
-          <b>Info:</b> Cick on Quote to delete it
-        </slot>
+        <slot> <b>Info:</b> Cick on Quote to delete it </slot>
       </app-info-bar>
 
       <app-quote-list :quotes="quotes"></app-quote-list>
@@ -20,7 +18,8 @@
 
 <script>
 // App.vue ToDo List
-// Auto kalba
+// Quotes Displayed on a real wall picture
+// Panaikint Hover New Quote Componente +
 // Margin auto Quote when used in NewQuote component +
 // gggggggggggggggggggggggg bug (jei kartoji simboli ir nededi tarpu neveik break point )
 // Real time appearing Quote +
@@ -34,6 +33,7 @@
 // Add Border animation
 // Active component switch
 // Progress Bars spalvas pagal Quote pasirinkta dizaina
+// Auto kalba
 
 import appHeader from "./components/layout/Header.vue";
 import appQuote from "./components/Quote.vue";
