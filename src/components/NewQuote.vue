@@ -32,6 +32,7 @@
         <button type="submit" class="btn btn-success btn-lg mt-2">
           Add Quote
         </button>
+        <!-- <button @submit.prevent>SFfsfsf</button> -->
       </div>
     </form>
   </div>
