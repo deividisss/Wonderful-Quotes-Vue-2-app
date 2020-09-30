@@ -1,23 +1,40 @@
 <template>
   <div>
-    <app-header>
-      <slot>{{ name }}</slot>
-    </app-header>
+    <div class="container border border-top-0 rounded">
+      <app-header>
+        <slot>{{ name }}</slot>
+      </app-header>
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+      <br />
+      <app-progress-bar :quotesCount="quotesCount" />
 
-    <app-progress-bar :quotesCount="quotesCount" />
-    <app-new-quote
-      :quotes="quotes"
-      :quotesCount="quotesCount"
-      @update-count="quotesCount = $event"
-    ></app-new-quote>
-    <div class="container">
-      <app-info-bar>
-        <slot> <b>Info:</b> Cick on Quote to delete it </slot>
-      </app-info-bar>
+      <app-new-quote
+        :quotes="quotes"
+        :quotesCount="quotesCount"
+        @update-count="quotesCount = $event"
+      ></app-new-quote>
+      <div class="container">
+        <app-info-bar>
+          <slot> <b>Info:</b> Cick on Quote to delete it </slot>
+        </app-info-bar>
+        <hr />
+        <h2>Quotes List</h2>
+        <app-quote-list :quotes="quotes"></app-quote-list>
+      </div>
 
-      <app-quote-list :quotes="quotes"></app-quote-list>
+      <br />
     </div>
     <br />
+    <div class="kontiks pt-3"><app-Wall></app-Wall></div>
   </div>
 </template>
 
@@ -47,6 +64,7 @@ import appQuoteList from "./components/QuoteList.vue";
 import appInfoBar from "./components/InfoBar.vue";
 import appNewQuote from "./components/NewQuote.vue";
 import appProgressBar from "./components/ProgressBar.vue";
+import appWall from "./components/Wall.vue";
 
 export default {
   components: {
@@ -56,6 +74,7 @@ export default {
     appInfoBar,
     appNewQuote,
     appProgressBar,
+    appWall,
   },
   methods: {},
   computed: {
@@ -122,5 +141,9 @@ export default {
 </script>
 
 <style>
+.kontiks {
+  min-height: 900px;
+  background: #eef2f7;
+}
 </style>
 
