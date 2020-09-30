@@ -9,10 +9,10 @@
       <h4>Quote</h4>
 
       <blockquote class="blockquote">
-        <p class="mb-0">{{ quote.quote }}</p>
+        <p class="mb-0 quote-text">{{ quote.quote }}</p>
         <footer class="blockquote-footer">
           Written by
-          <cite :title="quote.author">{{quote.author}}</cite>
+          <cite :title="quote.author">{{ quote.author }}</cite>
         </footer>
       </blockquote>
     </div>
@@ -25,7 +25,9 @@ export default {
   methods: {},
   created() {},
   data() {
-    return {};
+    return {
+      whiteShow: true,
+    };
   },
   computed: {
     activeHover() {
@@ -33,6 +35,22 @@ export default {
         return (this.hover = true);
       }
     },
+    // quoteText() {
+    //   if (this.quote.quote === null || this.quote.quote === "") {
+    //     return "&nbsp;";
+    //   } else {
+    //     return this.quote.quote;
+    //   }
+    // },
+  },
+  watch: {
+    // "quote.quote"() {
+    //   if (this.quote.quote === null || this.quote.quote === "") {
+    //     this.whiteShow = true;
+    //   } else {
+    //     this.whiteShow = false;
+    //   }
+    // },
   },
 };
 </script>

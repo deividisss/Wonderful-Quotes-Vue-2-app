@@ -44,7 +44,7 @@ export default {
   components: {
     appQuote,
   },
-  props: ["quotes"],
+  props: ["quotes", "quotesCount"],
   data() {
     return {
       quote: {
@@ -61,6 +61,17 @@ export default {
       });
       this.quote.quote = null;
       this.quote.author = null;
+      let myNumber = this.quotesCount;
+      myNumber++;
+      this.$emit("update-count", myNumber);
+    },
+    daugiau() {
+      this.quotesCount++;
+    },
+  },
+  computed: {
+    skaicius() {
+      return this.quotesCount;
     },
   },
 };

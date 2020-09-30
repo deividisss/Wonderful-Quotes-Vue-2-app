@@ -3,8 +3,13 @@
     <app-header>
       <slot>{{ name }}</slot>
     </app-header>
-    <app-new-quote :quotes="quotes"></app-new-quote>
 
+    <app-progress-bar :quotesCount="quotesCount" />
+    <app-new-quote
+      :quotes="quotes"
+      :quotesCount="quotesCount"
+      @update-count="quotesCount = $event"
+    ></app-new-quote>
     <div class="container">
       <app-info-bar>
         <slot> <b>Info:</b> Cick on Quote to delete it </slot>
@@ -18,6 +23,7 @@
 
 <script>
 // App.vue ToDo List
+// Form visi chekai
 // Quotes Displayed on a real wall picture
 // Panaikint Hover New Quote Componente +
 // Margin auto Quote when used in NewQuote component +
@@ -40,6 +46,7 @@ import appQuote from "./components/Quote.vue";
 import appQuoteList from "./components/QuoteList.vue";
 import appInfoBar from "./components/InfoBar.vue";
 import appNewQuote from "./components/NewQuote.vue";
+import appProgressBar from "./components/ProgressBar.vue";
 
 export default {
   components: {
@@ -48,10 +55,13 @@ export default {
     appQuoteList,
     appInfoBar,
     appNewQuote,
+    appProgressBar,
   },
+  methods: {},
   data() {
     return {
       name: "Wonderfull Quotes",
+      quotesCount: 0,
       quotes: [
         {
           quote:
