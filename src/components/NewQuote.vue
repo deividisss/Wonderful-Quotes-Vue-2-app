@@ -29,7 +29,11 @@
         />
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-success btn-lg mt-2">
+        <button
+          type="submit"
+          class="btn btn-success btn-lg mt-2"
+          :disabled="isButtonDisabled"
+        >
           Add Quote
         </button>
         <!-- <button @submit.prevent>SFfsfsf</button> -->
@@ -48,6 +52,7 @@ export default {
   props: ["quotes", "quotesCount"],
   data() {
     return {
+      btnDisabled: false,
       quote: {
         quote: null,
         author: null,
@@ -56,23 +61,31 @@ export default {
   },
   methods: {
     addNewQuote() {
-      this.quotes.unshift({
-        quote: this.quote.quote,
-        author: this.quote.author,
-      });
-      this.quote.quote = null;
-      this.quote.author = null;
-      let myNumber = this.quotesCount;
-      myNumber++;
-      this.$emit("update-count", myNumber);
+      if (this.quotesCount >= 10) {
+        alert("Quotes limit reached");
+      } else {
+        this.quotes.unshift({
+          quote: this.quote.quote,
+          author: this.quote.author,
+        });
+        this.quote.quote = null;
+        this.quote.author = null;
+        let myNumber = this.quotesCount;
+        myNumber++;
+        this.$emit("update-count", myNumber);
+      }
     },
     daugiau() {
       this.quotesCount++;
     },
   },
   computed: {
-    skaicius() {
-      return this.quotesCount;
+    isButtonDisabled() {
+      if (this.quotesCount >= 10) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };

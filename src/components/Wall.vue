@@ -15,7 +15,7 @@ export default {};
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
 
-  min-height: 500px;
+  min-height: 600px;
   width: 90vw;
   margin: 0px auto;
   background: white;

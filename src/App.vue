@@ -20,7 +20,6 @@
       <app-new-quote
         :quotes="quotes"
         :quotesCount="quotesCount"
-        @update-count="quotesCount = $event"
       ></app-new-quote>
       <div class="container">
         <app-info-bar>
@@ -76,16 +75,25 @@ export default {
     appProgressBar,
     appWall,
   },
-  methods: {},
+  methods: {
+    quotesCount(number) {},
+  },
   computed: {
     quotesCount() {
       return this.quotes.length;
     },
   },
+  watch: {
+    // quotesCount() {
+    //   if (this.quotesCount >= 10) {
+    //     alert();
+    //   }
+    // },
+  },
   data() {
     return {
       name: "Wonderfull Quotes",
-
+      quotesLimit: 10,
       quotes: [
         {
           quote:
