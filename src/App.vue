@@ -1,10 +1,11 @@
 <template>
   <div>
+    <!-- <app-header>
+      <slot>{{ name }}</slot>
+    </app-header> -->
+    <div class="kontiks pt-3 pb-4"><app-Wall :quotes="quotes"></app-Wall></div>
     <div class="container border border-top-0 rounded">
-      <app-header>
-        <slot>{{ name }}</slot>
-      </app-header>
-      <div class="container">
+      <!-- <div class="container">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -13,7 +14,7 @@
             <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
-      </div>
+      </div> -->
       <br />
       <app-progress-bar :quotesCount="quotesCount" />
 
@@ -33,7 +34,6 @@
       <br />
     </div>
     <br />
-    <div class="kontiks pt-3"><app-Wall></app-Wall></div>
   </div>
 </template>
 
@@ -137,11 +137,11 @@ export default {
           quote: "Every strike brings me closer to the next home run.",
           author: "Babe Ruth",
         },
-        {
-          quote:
-            "Definiteness of purpose is the starting point of all achievement.",
-          author: "W. Clement Stone",
-        },
+        // {
+        //   quote:
+        //     "Definiteness of purpose is the starting point of all achievement.",
+        //   author: "W. Clement Stone",
+        // },
       ],
     };
   },
@@ -150,7 +150,6 @@ export default {
 
 <style>
 .kontiks {
-  min-height: 900px;
   background: #eef2f7;
 }
 </style>

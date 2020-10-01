@@ -1,12 +1,21 @@
 <template>
-  <div class="container-fluid text-center mt-4">
+  <div class="container-fluid text-center my-4">
     <h1 class="display-4 mb-4">Personal Quotes Wall</h1>
-    <div class="box"></div>
+    <div class="box p-4 -4">
+      <app-quote-list :quotes="quotes"></app-quote-list>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import appQuoteList from ".././components/QuoteList.vue";
+
+export default {
+  components: {
+    appQuoteList,
+  },
+  props: ["quotes"],
+};
 </script>
 <style scoped>
 .box {

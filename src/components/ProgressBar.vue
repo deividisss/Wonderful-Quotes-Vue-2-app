@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <p class="display-4">Quotes Added</p>
+  <div class="container mb-4">
+    <p class="display-4 pt-1">Quotes Added</p>
     <div class="progress" style="height: 1.5rem">
       <div
         class="progress-bar progress-bar-striped bg-success progress-bar-animated"
