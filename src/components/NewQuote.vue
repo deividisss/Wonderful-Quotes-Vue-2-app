@@ -64,15 +64,19 @@ export default {
       if (this.quotesCount >= 10) {
         alert("Quotes limit reached");
       } else {
-        this.quotes.unshift({
-          quote: this.quote.quote,
-          author: this.quote.author,
-        });
-        this.quote.quote = null;
-        this.quote.author = null;
-        let myNumber = this.quotesCount;
-        myNumber++;
-        this.$emit("update-count", myNumber);
+        if (!this.quote.quote) {
+          alert("Quote text empty ad some text");
+        } else {
+          this.quotes.unshift({
+            quote: this.quote.quote,
+            author: this.quote.author,
+          });
+          this.quote.quote = null;
+          this.quote.author = null;
+          let myNumber = this.quotesCount;
+          myNumber++;
+          this.$emit("update-count", myNumber);
+        }
       }
     },
     daugiau() {
