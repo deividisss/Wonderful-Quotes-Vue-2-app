@@ -12,7 +12,15 @@
         <p class="mb-0 quote-text">{{ quote.quote }}</p>
         <footer class="blockquote-footer">
           Written by
-          <cite :title="quote.author">{{ quote.author }}</cite>
+          <cite :title="quote.author"
+            >{{ quote.author }}
+            <span
+              v-show="tweetDisp"
+              @click="tweet"
+              class="btn badge badge-pill badge-dark"
+              >Tweet</span
+            ></cite
+          >
         </footer>
       </blockquote>
     </div>
@@ -21,11 +29,20 @@
 
 <script>
 export default {
-  props: ["quote", "index", "hover"],
-  methods: {},
-  created() {},
+  props: ["quote", "index", "hover", "mode"],
+  methods: {
+    tweet() {
+      alert("Tweet soon");
+    },
+  },
+  created() {
+    if (this.mode === "display") {
+      this.tweetDisp = true;
+    }
+  },
   data() {
     return {
+      tweetDisp: null,
       whiteShow: true,
     };
   },

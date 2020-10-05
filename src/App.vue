@@ -3,7 +3,9 @@
     <!-- <app-header>
       <slot>{{ name }}</slot>
     </app-header> -->
-    <div class="kontiks pt-3 pb-4"><app-Wall :quotes="quotes"></app-Wall></div>
+    <div class="kontiks pt-3 pb-4">
+      <app-Wall :quotes="quotes"></app-Wall>
+    </div>
     <div class="container border border-top-0 rounded">
       <!-- <div class="container">
         <ul class="nav nav-tabs">
@@ -28,7 +30,11 @@
         </app-info-bar>
         <hr />
         <h2>Quotes List</h2>
-        <app-quote-list :quotes="quotes" :hover="true"></app-quote-list>
+        <app-quote-list
+          :quotes="quotes"
+          :hover="true"
+          mode="edit"
+        ></app-quote-list>
       </div>
 
       <br />
@@ -39,7 +45,7 @@
 
 <script>
 // App.vue ToDo List
-// Į wall nusiust no delete and no hover
+// Į wall nusiust no delete and no hover (pakeist delete emit veikima)
 // Kai nulis quotes pridet random quote apie emptiness Grafiti stilium
 // Listen to the Quote button (ivairūs balsai)
 // Form visi chekai, unresponsive input field bugas

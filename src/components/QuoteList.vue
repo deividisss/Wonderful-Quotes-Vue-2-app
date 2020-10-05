@@ -7,7 +7,8 @@
       :quote="quote"
       :index="index"
       :hover="hover"
-      @delete-quote="$delete(quotes, $event)"
+      @delete-quote="remove($event)"
+      :mode="mode"
     ></app-quote>
   </div>
 </template>
@@ -19,10 +20,12 @@ export default {
   components: {
     appQuote,
   },
-  props: ["quotes", "hover"],
+  props: ["quotes", "hover", "mode"],
   methods: {
     remove(index) {
-      this.$delete(this.finds, index);
+      if (this.mode === "edit") {
+        this.$delete(this.quotes, index);
+      }
     },
   },
 
