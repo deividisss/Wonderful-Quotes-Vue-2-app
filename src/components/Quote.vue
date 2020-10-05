@@ -2,7 +2,7 @@
   <div class="col-lg-4 mt-4">
     <div
       class="border rounded p-4"
-      @click="$emit('delete-quote', index)"
+      @click="deleteQuote"
       :class="{ quote: activeHover }"
     >
       <!-- <div class="border p-4" @click="deleteQuote"> -->
@@ -15,7 +15,7 @@
           <cite :title="quote.author"
             >{{ quote.author }}
             <span
-              v-show="tweetDisp"
+              v-if="tweetDisp"
               @click="tweet"
               class="btn badge badge-pill badge-dark"
               >Tweet</span
@@ -33,6 +33,11 @@ export default {
   methods: {
     tweet() {
       alert("Tweet soon");
+    },
+    deleteQuote() {
+      if (this.mode === "edit") {
+        this.$emit("delete-quote", this.index);
+      }
     },
   },
   created() {
