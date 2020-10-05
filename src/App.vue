@@ -94,7 +94,7 @@ export default {
   },
   data() {
     return {
-      name: "Wonderfull Quotes",
+      name: "Wonderfull Quotes not",
       quotesLimit: 10,
       quotes: [
         {
