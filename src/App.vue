@@ -28,7 +28,7 @@
         </app-info-bar>
         <hr />
         <h2>Quotes List</h2>
-        <app-quote-list :quotes="quotes"></app-quote-list>
+        <app-quote-list :quotes="quotes" :hover="true"></app-quote-list>
       </div>
 
       <br />
@@ -39,6 +39,7 @@
 
 <script>
 // App.vue ToDo List
+// Į wall nusiust no delete and no hover
 // Kai nulis quotes pridet random quote apie emptiness Grafiti stilium
 // Listen to the Quote button (ivairūs balsai)
 // Form visi chekai, unresponsive input field bugas

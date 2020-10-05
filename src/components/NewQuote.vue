@@ -1,11 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <app-quote
-        style="margin: 0 auto"
-        :quote="quote"
-        :hover="false"
-      ></app-quote>
+      <app-quote style="margin: 0 auto" :quote="quote"></app-quote>
     </div>
 
     <form @submit.prevent="addNewQuote" class="mt-4">

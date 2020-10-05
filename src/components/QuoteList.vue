@@ -6,6 +6,7 @@
       :key="index + quote.author"
       :quote="quote"
       :index="index"
+      :hover="hover"
       @delete-quote="$delete(quotes, $event)"
     ></app-quote>
   </div>
@@ -18,8 +19,12 @@ export default {
   components: {
     appQuote,
   },
-  props: ["quotes"],
-  methods: {},
+  props: ["quotes", "hover"],
+  methods: {
+    remove(index) {
+      this.$delete(this.finds, index);
+    },
+  },
 
   created() {},
 };

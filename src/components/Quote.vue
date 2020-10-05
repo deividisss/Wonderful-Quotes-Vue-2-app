@@ -32,6 +32,8 @@ export default {
   computed: {
     activeHover() {
       if (this.hover === undefined) {
+        return (this.hover = false);
+      } else {
         return (this.hover = true);
       }
     },
