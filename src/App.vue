@@ -39,15 +39,17 @@
 
 <script>
 // App.vue ToDo List
-// Form visi chekai
+// Kai nulis quotes pridet random quote apie emptiness Grafiti stilium
+// Listen to the Quote button (ivairūs balsai)
+// Form visi chekai, unresponsive input field bugas
 // Quotes Displayed on a real wall picture
 // Panaikint Hover New Quote Componente +
 // Margin auto Quote when used in NewQuote component +
-// gggggggggggggggggggggggg bug (jei kartoji simboli ir nededi tarpu neveik break point )
 // Real time appearing Quote +
 // Su Enter submit form +
-// Alert box kuris saka istrink quotes, jei nori pridėt paildomai virsijus limita
-// Quote wall Limit 10
+// Alert box kuris saka istrink quotes, jei nori pridėt paildomai virsijus limita +
+// Quote wall Limit 10 +
+// gggggggggggggggggggggggg bug (jei kartoji simboli ir nededi tarpu neveik break point )
 // Tweet quote
 // Fetch Quote
 // Quote Design pagal temą
