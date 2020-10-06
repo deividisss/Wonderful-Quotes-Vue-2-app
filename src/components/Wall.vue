@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid text-center my-4">
-    <h1 class="display-4 mb-4">Personal Quotes Wall updated</h1>
+    <h1 class="display-4 mb-4">Personal Quotes Wall</h1>
     <div class="box p-4 -4">
       <app-quote-list :quotes="quotes" mode="display"></app-quote-list>
     </div>
