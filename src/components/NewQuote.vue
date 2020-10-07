@@ -4,24 +4,24 @@
       <app-quote style="margin: 0 auto" :quote="quote"></app-quote>
     </div>
 
-    <form @submit.prevent="addNewQuote" class="mt-4">
+    <form class="mt-4" @submit.prevent="addNewQuote">
       <div class="form-group">
         <label for="comment">Quote text:</label>
         <!-- <textarea class="form-control" rows="5" id="comment" name="text" v-model="quote"></textarea> -->
         <input
-          class="form-control"
           id="comment"
-          name="text"
           v-model="quote.quote"
+          class="form-control"
+          name="text"
         />
       </div>
       <div class="form-group">
         <label for="author">Author:</label>
         <input
-          class="form-control"
-          name="text"
           id="author"
           v-model="quote.author"
+          class="form-control"
+          name="text"
         />
       </div>
       <div class="text-center">
@@ -43,7 +43,7 @@ import appQuote from "./../components/Quote.vue";
 
 export default {
   components: {
-    appQuote,
+    appQuote
   },
   props: ["quotes", "quotesCount"],
   data() {
@@ -51,9 +51,18 @@ export default {
       btnDisabled: false,
       quote: {
         quote: null,
-        author: null,
-      },
+        author: null
+      }
     };
+  },
+  computed: {
+    isButtonDisabled() {
+      if (this.quotesCount >= 10) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   methods: {
     addNewQuote() {
@@ -65,7 +74,7 @@ export default {
         } else {
           this.quotes.unshift({
             quote: this.quote.quote,
-            author: this.quote.author,
+            author: this.quote.author
           });
           this.quote.quote = null;
           this.quote.author = null;
@@ -77,16 +86,7 @@ export default {
     },
     daugiau() {
       this.quotesCount++;
-    },
-  },
-  computed: {
-    isButtonDisabled() {
-      if (this.quotesCount >= 10) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-  },
+    }
+  }
 };
 </script>

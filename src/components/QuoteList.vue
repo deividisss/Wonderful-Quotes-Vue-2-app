@@ -7,8 +7,8 @@
       :quote="quote"
       :index="index"
       :hover="hover"
-      @delete-quote="remove($event)"
       :mode="mode"
+      @delete-quote="remove($event)"
     ></app-quote>
   </div>
 </template>
@@ -18,20 +18,20 @@ import appQuote from "./../components/Quote.vue";
 
 export default {
   components: {
-    appQuote,
+    appQuote
   },
   props: ["quotes", "hover", "mode"],
+
+  created() {
+    console.log("Hello from JS!");
+    console.log("The time is ".this.$moment().format("HH:mm"));
+  },
   methods: {
     remove(index) {
       if (this.mode === "edit") {
         this.$delete(this.quotes, index);
       }
-    },
-  },
-
-  created() {
-console.log("Hello from JS!");
- console.log('The time is ' . this.$moment().format("HH:mm"));
-  },
+    }
+  }
 };
 </script>

@@ -18,11 +18,11 @@
         </ul>
       </div> -->
       <br />
-      <app-progress-bar :quotesCount="quotesCount" />
+      <app-progress-bar :quotes-count="quotesCount" />
 
       <app-new-quote
         :quotes="quotes"
-        :quotesCount="quotesCount"
+        :quotes-count="quotesCount"
       ></app-new-quote>
       <div class="container">
         <app-info-bar>
@@ -66,8 +66,7 @@
 // Progress Bars spalvas pagal Quote pasirinkta dizaina
 // Auto kalba
 
-import appHeader from "./components/layout/Header.vue";
-import appQuote from "./components/Quote.vue";
+
 import appQuoteList from "./components/QuoteList.vue";
 import appInfoBar from "./components/InfoBar.vue";
 import appNewQuote from "./components/NewQuote.vue";
@@ -76,28 +75,12 @@ import appWall from "./components/Wall.vue";
 
 export default {
   components: {
-    appQuote,
-    appHeader,
+
     appQuoteList,
     appInfoBar,
     appNewQuote,
     appProgressBar,
-    appWall,
-  },
-  methods: {
-    quotesCount(number) {},
-  },
-  computed: {
-    quotesCount() {
-      return this.quotes.length;
-    },
-  },
-  watch: {
-    // quotesCount() {
-    //   if (this.quotesCount >= 10) {
-    //     alert();
-    //   }
-    // },
+    appWall
   },
   data() {
     return {
@@ -107,53 +90,65 @@ export default {
         {
           quote:
             "Life isn’t about getting and having, it’s about giving and being.",
-          author: "Kevin Kruse",
+          author: "Kevin Kruse"
         },
         {
           quote:
             "Whatever the mind of man can conceive and believe, it can achieve.",
-          author: "Napoleon Hill",
+          author: "Napoleon Hill"
         },
         {
           quote: "Strive not to be a success, but rather to be of value.",
-          author: "Albert Einstein",
+          author: "Albert Einstein"
         },
         {
           quote:
             "Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.",
-          author: "Robert Frost",
+          author: "Robert Frost"
         },
         {
           quote:
             "I attribute my success to this: I never gave or took any excuse.",
-          author: "Florence Nightingale",
+          author: "Florence Nightingale"
         },
         {
           quote: "You miss 100% of the shots you don’t take.",
-          author: "Wayne Gretzky",
+          author: "Wayne Gretzky"
         },
         {
           quote:
             "I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed.",
-          author: "Michael Jordan",
+          author: "Michael Jordan"
         },
         {
           quote:
             "The most difficult thing is the decision to act, the rest is merely tenacity.",
-          author: "Amelia Earhart",
+          author: "Amelia Earhart"
         },
         {
           quote: "Every strike brings me closer to the next home run.",
-          author: "Babe Ruth",
-        },
+          author: "Babe Ruth"
+        }
         // {
         //   quote:
         //     "Definiteness of purpose is the starting point of all achievement.",
         //   author: "W. Clement Stone",
         // },
-      ],
+      ]
     };
   },
+  computed: {
+    quotesCount() {
+      return this.quotes.length;
+    }
+  },
+  watch: {
+    // quotesCount() {
+    //   if (this.quotesCount >= 10) {
+    //     alert();
+    //   }
+    // },
+  }
 };
 </script>
 
@@ -162,4 +157,3 @@ export default {
   background: #eef2f7;
 }
 </style>
-
