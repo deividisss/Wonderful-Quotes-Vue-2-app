@@ -12,9 +12,9 @@ import appQuoteList from ".././components/QuoteList.vue";
 
 export default {
   components: {
-    appQuoteList,
+    appQuoteList
   },
-  props: ["quotes"],
+  props: ["quotes"]
 };
 </script>
 <style scoped>

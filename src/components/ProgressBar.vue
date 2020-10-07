@@ -24,14 +24,14 @@ export default {
   props: ["quotesCount"],
   data() {
     return {
-      kaskas: 1,
+      kaskas: 1
     };
   },
   computed: {
     barWidth() {
       return this.quotesCount * 10;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -39,4 +39,4 @@ export default {
 .progress {
   font-size: 1rem;
 }
-</style> 
+</style>

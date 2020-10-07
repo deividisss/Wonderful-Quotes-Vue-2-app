@@ -1,9 +1,14 @@
 <template>
-  <div class="row" v-show="showBar">
+  <div v-show="showBar" class="row">
     <div class="col mt-4 text-center">
       <div class="alert alert-primary" role="alert">
         <slot></slot>
-        <button @click="showBar = false" type="button" class="close" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          @click="showBar = false"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -14,8 +19,8 @@
 export default {
   data() {
     return {
-      showBar: true,
+      showBar: true
     };
-  },
+  }
 };
 </script>

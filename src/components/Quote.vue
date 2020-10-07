@@ -1,23 +1,20 @@
 <template>
   <div class="col-lg-4 mt-4">
-    <div
-      class="border rounded p-4"
-      @click="deleteQuote"
-      :class="{ quote: activeHover }"
-    >
+    <div class="border rounded p-4" @click="deleteQuote">
       <!-- <div class="border p-4" @click="deleteQuote"> -->
       <h4>Quote</h4>
 
       <blockquote class="blockquote">
-        <p class="mb-0 quote-text">{{ quote.quote }}s</p>
+        <p class="mb-0 quote-text">{{ quote.quote }}</p>
+
         <footer class="blockquote-footer">
           Written by
           <cite :title="quote.author"
             >{{ quote.author }}
             <span
               v-if="tweetDisp"
-              @click="tweet"
               class="btn badge badge-pill badge-dark"
+              @click="tweet"
               >Tweet</span
             ></cite
           >
@@ -30,25 +27,10 @@
 <script>
 export default {
   props: ["quote", "index", "hover", "mode"],
-  methods: {
-    tweet() {
-      alert("Tweet soon");
-    },
-    deleteQuote() {
-      if (this.mode === "edit") {
-        this.$emit("delete-quote", this.index);
-      }
-    },
-  },
-  created() {
-    if (this.mode === "display") {
-      this.tweetDisp = true;
-    }
-  },
   data() {
     return {
       tweetDisp: null,
-      whiteShow: true,
+      whiteShow: true
     };
   },
   computed: {
@@ -58,7 +40,7 @@ export default {
       } else {
         return (this.hover = true);
       }
-    },
+    }
     // quoteText() {
     //   if (this.quote.quote === null || this.quote.quote === "") {
     //     return "&nbsp;";
@@ -76,6 +58,21 @@ export default {
     //   }
     // },
   },
+  created() {
+    if (this.mode === "display") {
+      this.tweetDisp = true;
+    }
+  },
+  methods: {
+    tweet() {
+      alert("Tweet soon");
+    },
+    deleteQuote() {
+      if (this.mode === "edit") {
+        this.$emit("delete-quote", this.index);
+      }
+    }
+  }
 };
 </script>
 
