@@ -9,7 +9,7 @@
       <h4>Quote</h4>
 
       <blockquote class="blockquote">
-        <p class="mb-0 quote-text">{{ quote.quote }}</p>
+        <p class="mb-0 quote-text">{{ quote.quote }}s</p>
         <footer class="blockquote-footer">
           Written by
           <cite :title="quote.author"
