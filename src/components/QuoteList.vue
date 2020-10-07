@@ -29,6 +29,9 @@ export default {
     },
   },
 
-  created() {},
+  created() {
+console.log("Hello from JS!");
+ console.log('The time is ' . this.$moment().format("HH:mm"));
+  },
 };
 </script>
